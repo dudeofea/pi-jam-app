@@ -1,10 +1,15 @@
 console.log('zebetiboop1');
 $(window).load(function(){
 	$('#chrome').click(function(){
-		tcpClient.sendMessage('1,0');
+		//play sample
+		tcpClient.sendMessage('0,0');
+	})
+	$('#debug').click(function(){
+		//exit
+		tcpClient.sendMessage('-1,0');
 	})
 	console.log('zebetiboop');
-	tcpClient = new TcpClient('192.168.0.131', 5001);
+	tcpClient = new TcpClient('192.168.0.131', 5004);
 	tcpClient.connect(function() {
 		console.log('connected!');
 		tcpClient.addResponseListener(function(data) {
