@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><widget xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" id="com.your.company.PiJamApp" version="0.1.1">
-    <name>PiJamApp</name>
+<?xml version="1.0" encoding="UTF-8"?><widget xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" id="com.your.company.tcpinstrumentapp" version="0.1.1">
+    <name>tcp-instrument-app</name>
 
     <description>A Sample Chrome App</description>
 

@@ -1,5 +1,5 @@
 {
-    "name": "PiJamApp",
+    "name": "tcp-instrument-app",
     "description": "A Sample Chrome App",
     "manifest_version": 2,
     "minimum_chrome_version": "23",
