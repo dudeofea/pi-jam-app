@@ -69,7 +69,7 @@ $(window).load(function(){
 		pitch = 5;
 	});
 	console.log('zebetiboop');
-	tcpClient = new TcpClient('192.168.42.1', 5001);
+	tcpClient = new TcpClient('192.168.0.131', 5003);
 	tcpClient.connect(function() {
 		console.log('connected!');
 		tcpClient.addResponseListener(function(data) {
