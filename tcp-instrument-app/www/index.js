@@ -29,49 +29,84 @@
 console.log('zebetiboop1');
 $(window).load(function(){
 	var pitch = 0;
+	var instr = 0;
+	$('#select').change(function(){
+		$('body div').hide();
+		$('#div-'+$(this).val()).show();
+		$('#div-'+$(this).val()+' img:first-child').trigger('click');
+	})
 	$('#drum1').click(function(){
-		//play sample
-		tcpClient.sendMessage('0,'+pitch);
+		instr = 0;
 	})
 	$('#drum2').click(function(){
-		//play sample
-		tcpClient.sendMessage('1,'+pitch);
+		instr = 1;
 	})
 	$('#guitar1').click(function(){
-		//play sample
-		tcpClient.sendMessage('2,'+pitch);
+		instr = 2;
 	})
 	$('#guitar2').click(function(){
-		//play sample
-		tcpClient.sendMessage('3,'+pitch);
+		instr = 3;
 	})
 	$('#guitar3').click(function(){
-		//play sample
-		tcpClient.sendMessage('4,'+pitch);
+		instr = 4;
 	})
 	$('#guitar4').click(function(){
-		//play sample
-		tcpClient.sendMessage('5,'+pitch);
+		instr = 5;
+	})
+	$('#airhorn').click(function(){
+		instr = 6;
 	})
 	$('#A').click(function(){
 		pitch = -5;
+		tcpClient.sendMessage(instr+','+pitch);
 	});
 	$('#C').click(function(){
 		pitch = -2;
+		tcpClient.sendMessage(instr+','+pitch);
 	});
 	$('#D').click(function(){
 		pitch = 0;
+		tcpClient.sendMessage(instr+','+pitch);
 	});
 	$('#F').click(function(){
 		pitch = 3;
+		tcpClient.sendMessage(instr+','+pitch);
 	});
 	$('#G').click(function(){
 		pitch = 5;
+		tcpClient.sendMessage(instr+','+pitch);
+	});
+	$('#A2').click(function(){
+		pitch = 7;
+		tcpClient.sendMessage(instr+','+pitch);
+	});
+	$('#C2').click(function(){
+		pitch = 10;
+		tcpClient.sendMessage(instr+','+pitch);
+	});
+	$('#D2').click(function(){
+		pitch = 12;
+		tcpClient.sendMessage(instr+','+pitch);
+	});
+	$('#F2').click(function(){
+		pitch = 15;
+		tcpClient.sendMessage(instr+','+pitch);
+	});
+	$('#G2').click(function(){
+		pitch = 17;
+		tcpClient.sendMessage(instr+','+pitch);
 	});
 	console.log('zebetiboop');
-	tcpClient = new TcpClient('192.168.0.131', 5003);
-	tcpClient.connect(function() {
+	for (var i = 5000; i < 5006; i++) {
+		connect(i);
+	}
+});
+
+function connect(port){
+	var new_tcpClient = new TcpClient('192.168.0.131', port);
+	new_tcpClient.connect(function() {
 		console.log('connected!');
+		tcpClient = new_tcpClient;
 		tcpClient.addResponseListener(function(data) {
 			// Run response through ANSI colorizer.
 			//var formattedData = ansiConv.formatAnsi(data);
@@ -82,4 +117,4 @@ $(window).load(function(){
 			console.log(output);
 		});
 	});
-});
+}

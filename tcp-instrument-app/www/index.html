@@ -5,20 +5,38 @@
     <link rel="stylesheet" href="index.css" type="text/css" />
   </head>
   <body>
-    <img id="drum1" src="side_drum.png" />
-    <img id="drum2" src="side_drum.png" />
-    <img id="guitar1" src="guitar.png" />
-    <br/>
-    <img id="guitar2" src="guitar.png" />
-    <img id="guitar3" src="guitar.png" />
-    <img id="guitar4" src="guitar.png" />
-    <br/>
+  	<select id="select">
+  		<option value="1">dumrs</option>
+  		<option value="2">fank</option>
+  		<option value="3">jitur</option>
+  		<option value="4">other</option>
+  	</select>
+  	<div id="div-1">
+		<img id="drum1" src="side_drum.png" />
+		<img id="drum2" src="side_drum.png" />
+    </div>
+    <div id="div-2" style="display:none">
+    	<img id="guitar1" src="guitar.png" />
+    </div>
+    <div id="div-3" style="display:none">
+		<img id="guitar2" src="guitar.png" />
+		<img id="guitar3" src="guitar.png" />
+		<img id="guitar4" src="guitar.png" />
+    </div>
+    <div id="div-4" style="display:none">
+    	<img id="airhorn" src="airhorn.png" />
+    </div>
     <input id="A" type="button" value="A"/>
-    <input id="C" type="button" value="C"/>
-    <input id="D" type="button" value="D"/>
-    <input id="F" type="button" value="F"/>
-    <input id="G" type="button" value="G"/>
-
+	<input id="C" type="button" value="C"/>
+	<input id="D" type="button" value="D"/>
+	<input id="F" type="button" value="F"/>
+	<input id="G" type="button" value="G"/>
+	<br/>
+	<input id="A2" type="button" value="A"/>
+	<input id="C2" type="button" value="C"/>
+	<input id="D2" type="button" value="D"/>
+	<input id="F2" type="button" value="F"/>
+	<input id="G2" type="button" value="G"/>
     <script src="tcp-client.js"></script>
     <script src="jquery-2.0.3.min.js"></script>
     <script src="index.js"></script>
