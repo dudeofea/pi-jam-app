@@ -13,4 +13,8 @@ body {
 
 img {
   margin: 50px auto;
+  height: 100px;
+}
+input[type=button]{
+	padding: 10px;
 }

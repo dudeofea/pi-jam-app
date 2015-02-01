@@ -19,16 +19,48 @@
   //
 console.log('zebetiboop1');
 $(window).load(function(){
-	$('#chrome').click(function(){
+	var pitch = 0;
+	$('#drum1').click(function(){
 		//play sample
-		tcpClient.sendMessage('0,0');
+		tcpClient.sendMessage('0,'+pitch);
 	})
-	$('#debug').click(function(){
-		//exit
-		tcpClient.sendMessage('-1,0');
+	$('#drum2').click(function(){
+		//play sample
+		tcpClient.sendMessage('1,'+pitch);
 	})
+	$('#guitar1').click(function(){
+		//play sample
+		tcpClient.sendMessage('2,'+pitch);
+	})
+	$('#guitar2').click(function(){
+		//play sample
+		tcpClient.sendMessage('3,'+pitch);
+	})
+	$('#guitar3').click(function(){
+		//play sample
+		tcpClient.sendMessage('4,'+pitch);
+	})
+	$('#guitar4').click(function(){
+		//play sample
+		tcpClient.sendMessage('5,'+pitch);
+	})
+	$('#A').click(function(){
+		pitch = -5;
+	});
+	$('#C').click(function(){
+		pitch = -2;
+	});
+	$('#D').click(function(){
+		pitch = 0;
+	});
+	$('#F').click(function(){
+		pitch = 3;
+	});
+	$('#G').click(function(){
+		pitch = 5;
+	});
 	console.log('zebetiboop');
-	tcpClient = new TcpClient('192.168.0.131', 5004);
+	tcpClient = new TcpClient('192.168.42.1', 5001);
 	tcpClient.connect(function() {
 		console.log('connected!');
 		tcpClient.addResponseListener(function(data) {
