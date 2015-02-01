@@ -1,5 +1,8 @@
 console.log('zebetiboop1');
-(function(){
+$(window).load(function(){
+	$('#chrome').click(function(){
+		tcpClient.sendMessage('1,0');
+	})
 	console.log('zebetiboop');
 	tcpClient = new TcpClient('192.168.0.131', 5001);
 	tcpClient.connect(function() {
@@ -12,7 +15,6 @@ console.log('zebetiboop1');
 			// Render response in the terminal.
 			var output = lines.join('<br/>');
 			console.log(output);
-			});
-		tcpClient.sendMessage('zebetiboop\n');
+		});
 	});
-})();
+});
